@@ -12,13 +12,13 @@ def generate_unique_filename(base_path, extension):
 
 # Load class names
 classNames = []
-classFile = "/home/zakir/Desktop/Object_Detection_Files/coco.names"
+classFile = "/home/zakir/Desktop/Object_Detection_Files/coco.names" #Replace this path
 with open(classFile, "rt") as f:
     classNames = f.read().rstrip("\n").split("\n")
 
 # Load the pre-trained model
-configPath = "/home/zakir/Desktop/Object_Detection_Files/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt"
-weightsPath = "/home/zakir/Desktop/Object_Detection_Files/frozen_inference_graph.pb"
+configPath = "/home/zakir/Desktop/Object_Detection_Files/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt" # Replace this path
+weightsPath = "/home/zakir/Desktop/Object_Detection_Files/frozen_inference_graph.pb" # Replace this path
 
 net = cv2.dnn_DetectionModel(weightsPath, configPath)
 net.setInputSize(320, 320)
